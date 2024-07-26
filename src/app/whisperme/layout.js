@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import NavBar from "../components/NavBar";
 import localFont from "next/font/local";
-export const myFont = localFont({
+const myFont = localFont({
   src: "../../fonts/jetbrainsmono-regular.woff2",
 });
 

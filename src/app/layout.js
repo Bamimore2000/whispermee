@@ -3,7 +3,7 @@ import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "../auth";
 import localFont from "next/font/local";
-export const myFont = localFont({
+const myFont = localFont({
   src: "../fonts/jetbrainsmono-regular.woff2",
 });
 
