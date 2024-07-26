@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.secondary {
+  color: #525252;
+}
+
+.article {
+  height: calc(100vh - 20px);
+  margin: 10px;
+  padding: 20px;
+}
+.sign-in {
+  height: calc(100vh - 20px);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.image-container {
+  background-image: url(/anonymous.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 767px) {
+  .image-container {
+    background-image: url(/mobile.jpg);
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .image-container-username {
+    max-height: 220px;
+  }
+}
+
+.image-container-username {
+  background-image: url(/username.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 767px) {
+  .image-container-username {
+    background-image: url(/username-mobile.jpg);
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .image-container {
+    max-height: 220px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .article {
+    height: calc(100% - 200px);
+  }
+}
+
+.header-title {
+  margin-left: 20px;
+}
