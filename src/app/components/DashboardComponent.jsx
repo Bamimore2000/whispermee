@@ -8,7 +8,7 @@ import MessageSheet from "./Message";
 const DashboardComponent = ({ name, username }) => {
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = useState(false);
-  const url = "whisperme.app";
+  const url = "whispermee.app/anonymous";
   const copyText = async (username) => {
     try {
       // Replace with your text to be copied
