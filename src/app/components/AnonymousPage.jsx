@@ -6,7 +6,7 @@ import { Hearts } from "react-loader-spinner";
 import Link from "next/link";
 
 const AnonymousPage = ({ user }) => {
-  const { email, full_name, username } = user;
+  const { username } = user;
   const [open, setOpen] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [error, setError] = useState(false);
@@ -16,17 +16,18 @@ const AnonymousPage = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const form = new FormData(e.target);
     const message = text;
+    console.log(message);
     try {
       const response = await submitMessage(message, username);
-      setLoading(false);
       if (response.success) {
         setText("");
         setDisabled(true);
-        console.log(response);
         setOpen(true);
+      } else {
+        setError(true);
       }
+      setLoading(false);
     } catch (error) {
       setError(true);
       setLoading(false);
@@ -35,13 +36,14 @@ const AnonymousPage = ({ user }) => {
 
   const handleClear = () => {
     setText("");
+    setDisabled(true);
   };
 
   return (
     <>
       <MessageSheet open={open} setOpen={setOpen}>
         <div className="p-4 w-full mt-[50px]">
-          {!error && (
+          {!error ? (
             <div>
               <div className="hearts w-full grid place-items-center">
                 <Hearts />
@@ -67,10 +69,9 @@ const AnonymousPage = ({ user }) => {
                 Receive anonymous messages
               </Link>
             </div>
-          )}
-          {error && (
+          ) : (
             <div>
-              Sorry we can not send your message to {username} at the moment
+              Sorry, we cannot send your message to {username} at the moment
             </div>
           )}
         </div>
@@ -89,18 +90,19 @@ const AnonymousPage = ({ user }) => {
               <form onSubmit={handleSubmit}>
                 <textarea
                   className="bg-[#ECECEC] text-black w-full border-none outline-none p-4 resize-none"
-                  placeholder="type in your anonymous message"
+                  placeholder="Type in your anonymous message"
                   onChange={(e) => {
                     setText(e.target.value);
-                    setDisabled(e.target.value.length < 1 ? true : false);
+                    setDisabled(e.target.value.length < 1);
                   }}
                   value={text}
                   name="message"
-                  id=""
+                  id="message-textarea"
                   cols="30"
                   rows="10"
                 />
                 <button
+                  type="button"
                   onClick={handleClear}
                   className="w-full mt-3 mb-4 p-3 border border-black"
                 >
