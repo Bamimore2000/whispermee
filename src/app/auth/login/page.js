@@ -14,7 +14,7 @@ const Register = async () => {
         </section>
         <section className="second basis-4/6 md:basis-3/5 m-[10px] p-5  w-full">
           <div className="wrapper">
-            <section className="title mb-16 leading-loose">
+            <section className="title mb-10 leading-loose">
               <h1 className="text-3xl mb-4">Get Started</h1>
               <h3 className="text-xl">Simple, Secure and Anonymous</h3>
             </section>

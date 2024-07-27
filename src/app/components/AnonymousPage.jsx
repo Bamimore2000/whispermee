@@ -42,7 +42,7 @@ const AnonymousPage = ({ user }) => {
                 <Hearts />
               </div>
 
-              <h1 className="text-2xl text-center">
+              <h1 className="text-xl md:text-2xl text-center">
                 Your anonymous message has been successfully sent. 🎉 The
                 recipient will never know it’s from you!
               </h1>
@@ -63,7 +63,11 @@ const AnonymousPage = ({ user }) => {
               </Link>
             </div>
           )}
-          {error && <div>Sorry we can not send your message</div>}
+          {error && (
+            <div>
+              Sorry we can not send your to {username} message at the moment
+            </div>
+          )}
         </div>
       </MessageSheet>
       <main className="sign-in h-[100vh]">
@@ -94,6 +98,7 @@ const AnonymousPage = ({ user }) => {
                 <button
                   onClick={() => {
                     setText("");
+                    setDisabled(true);
                   }}
                   className="w-full mt-3 mb-4 p-3 border border-black"
                 >
