@@ -119,11 +119,11 @@ const Home = () => {
             <h1 className="italic bold text-[40px] md:text-[50px] tracking-wide mb-2">
               WhisperMe
             </h1>
-            <p className="secondary text-xl md:text-xl mb-6">
+            <p className="secondary text-lg md:text-xl mb-6">
               Ever truly wanted to know what people think about you? WhisperMe
               allows you to share and recieve anonymous messages
             </p>
-            <button className="text-white bg-black p-3 rounded-3xl mb-2">
+            <button className="text-white bg-black p-3 mb-2">
               <Link className="flex items-center gap-2" href="/auth/login">
                 Recieve anonymous messages
                 <FaGreaterThan />
