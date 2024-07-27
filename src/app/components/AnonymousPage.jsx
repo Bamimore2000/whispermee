@@ -36,6 +36,7 @@ const AnonymousPage = ({ user }) => {
   const handleClear = () => {
     setText("");
     setDisabled(true);
+    setLoading(false);
   };
 
   return (
