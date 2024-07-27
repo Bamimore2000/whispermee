@@ -8,7 +8,7 @@ import MessageSheet from "./Message";
 const DashboardComponent = ({ name, username }) => {
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = useState(false);
-  const url = "whispermee.vercel.app/anonymous";
+  const url = "https://whispermee.vercel.app/anonymous";
   const copyText = async (username) => {
     try {
       // Replace with your text to be copied
@@ -38,7 +38,7 @@ const DashboardComponent = ({ name, username }) => {
         <div className="mt-12">
           <article>Steps</article>
           <div className="w-full h-[350px] bg-[#F5F5F5] mt-4 p-8 relative flex flex-col justify-between">
-            <p>whisperme.app/{username}</p>
+            <p>whisperme.vercel.app/anonymous/{username}</p>
             <span
               onClick={() => setOpen(true)}
               className="absolute cursor-pointer right-3 top-3 text-center bg-[#E4EFFF] p-2 rounded-2xl w-16"
