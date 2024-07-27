@@ -95,7 +95,7 @@ const AnonymousPage = ({ user }) => {
                   onClick={() => {
                     setText("");
                   }}
-                  className="w-full mt-3 mb-12 p-3 border border-black"
+                  className="w-full mt-3 mb-4 p-3 border border-black"
                 >
                   Clear
                 </button>

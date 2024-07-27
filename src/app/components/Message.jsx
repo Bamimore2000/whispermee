@@ -50,7 +50,7 @@ const MessageSheet = ({ open, setOpen, children, height }) => {
                 top: 0,
                 bottom: 0,
               }}
-              style={{ y, height: height || "50vh" }}
+              style={{ y, height: height || "60vh" }}
               dragElastic={{
                 top: 0,
                 bottom: 0.5,
@@ -80,7 +80,7 @@ const MessageSheet = ({ open, setOpen, children, height }) => {
             </motion.div>
             <div
               onClick={(e) => e.stopPropagation()}
-              className="hidden md:block md:w-full md:max-w-[768px] bg-[#F8F8F8] min-h-[65vh]"
+              className="hidden md:block md:w-full md:max-w-[768px] bg-[#F8F8F8] min-h-[50vh]"
             >
               <div className="cancel w-full relative h-[50px] bg-[#F8F8F8] p-4 flex justify-end">
                 <FaTimes

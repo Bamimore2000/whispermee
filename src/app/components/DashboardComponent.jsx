@@ -41,7 +41,7 @@ const DashboardComponent = ({ name, username }) => {
             <p>whisperme.vercel.app/anonymous/{username}</p>
             <span
               onClick={() => setOpen(true)}
-              className="absolute cursor-pointer right-3 top-3 text-center bg-[#E4EFFF] p-2 rounded-2xl w-16"
+              className="absolute cursor-pointer right-0 top-0 text-center bg-[#E4EFFF] p-2 rounded-2xl w-16"
             >
               Edit
             </span>
