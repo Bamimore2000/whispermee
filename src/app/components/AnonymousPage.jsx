@@ -4,6 +4,7 @@ import { submitMessage } from "../actions";
 import MessageSheet from "./Message";
 import { Hearts } from "react-loader-spinner";
 import Link from "next/link";
+import { trusted } from "mongoose";
 const AnonymousPage = ({ user }) => {
   const { email, full_name, username } = user;
   const [open, setOpen] = useState(false);
@@ -23,6 +24,7 @@ const AnonymousPage = ({ user }) => {
       setLoading(false);
       if (response.success) {
         setText("");
+        setDisabled(true);
         console.log(response);
         setOpen(true);
       }
