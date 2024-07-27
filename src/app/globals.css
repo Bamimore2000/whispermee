@@ -17,14 +17,27 @@
   margin-bottom: 10px;
 }
 .image-container {
-  background-image: url(/anonymous.jpg);
+  background-image: url(/anonymous.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 767px) {
   .image-container {
-    background-image: url(/mobile.jpg);
+    background-image: url(/mobile-mask.webp);
+    background-size: cover;
+  }
+}
+
+.main-bg {
+  background-image: url(/desktop-bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 767px) {
+  .main-bg {
+    background-image: url(/mobile-bg.webp);
     background-size: cover;
   }
 }
@@ -36,13 +49,13 @@
 }
 
 .image-container-username {
-  background-image: url(/username.jpg);
+  background-image: url(/username.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }
 @media screen and (max-width: 767px) {
   .image-container-username {
-    background-image: url(/username-mobile.jpg);
+    background-image: url(/username-mobile-2.webp);
     background-size: cover;
   }
 }

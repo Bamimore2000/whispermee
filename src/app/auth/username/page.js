@@ -107,7 +107,7 @@ const Register = () => {
     <main className="sign-in h-[100vh]">
       <div className="main-wrapper md:mt-0 flex flex-col md:p-5 md:w-[98%] md:flex-row items-center gap-6 h-full">
         <section className="first basis-2/6 md:basis-2/5 h-[100%] w-full flex items-end">
-          <div className="image-container-username h-full w-full rounded-xl "></div>
+          <div className="image-container-username h-full w-full"></div>
         </section>
         <section className="second basis-4/6 md:basis-3/5 m-[10px]  p-5  w-full">
           <div className="wrapper">

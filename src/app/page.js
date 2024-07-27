@@ -64,7 +64,7 @@ const Home = () => {
           </Link>
         </div>
       </nav>
-      <section className="article bg-fuchsia-100 rounded-lg">
+      <section className="article main-bg bg-fuchsia-100 rounded-lg">
         <nav className="flex md:hidden justify-between items-center">
           <div className="logo text-[25px]">WhisperMe</div>
           <div

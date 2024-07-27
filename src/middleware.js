@@ -41,7 +41,8 @@ export const middleware = async (req) => {
 
 export const config = {
   matcher: [
-    // Exclude static assets, including those in public folder
-    "/((?!api|_next/static|_next/image|favicon.ico|anonymous.jpg|mobile.jpg|username.jpg|username-mobile.jpg).*)",
+    // Exclude static assets, including those in the public folder,
+    // but include specific image paths
+    "/((?!api|_next/static|_next/image|favicon.ico|anonymous.webp|mobile-mask.webp|desktop-bg.webp|mobile-bg.webp|username.webp|username-mobile-2.webp).*)",
   ],
 };
