@@ -4,7 +4,7 @@ import { submitMessage } from "../actions";
 import MessageSheet from "./Message";
 import { Hearts } from "react-loader-spinner";
 import Link from "next/link";
-import { trusted } from "mongoose";
+
 const AnonymousPage = ({ user }) => {
   const { email, full_name, username } = user;
   const [open, setOpen] = useState(false);
@@ -18,7 +18,6 @@ const AnonymousPage = ({ user }) => {
     setLoading(true);
     const form = new FormData(e.target);
     const message = text;
-    // const message = form.get("message");
     try {
       const response = await submitMessage(message, username);
       setLoading(false);
@@ -30,8 +29,15 @@ const AnonymousPage = ({ user }) => {
       }
     } catch (error) {
       setError(true);
+      setLoading(false);
     }
   };
+
+  const handleClear = () => {
+    setText("");
+    setDisabled(true);
+  };
+
   return (
     <>
       <MessageSheet open={open} setOpen={setOpen}>
@@ -65,7 +71,7 @@ const AnonymousPage = ({ user }) => {
           )}
           {error && (
             <div>
-              Sorry we can not send your to {username} message at the moment
+              Sorry we can not send your message to {username} at the moment
             </div>
           )}
         </div>
@@ -96,10 +102,7 @@ const AnonymousPage = ({ user }) => {
                   rows="10"
                 />
                 <button
-                  onClick={() => {
-                    setText("");
-                    setDisabled(true);
-                  }}
+                  onClick={handleClear}
                   className="w-full mt-3 mb-4 p-3 border border-black"
                 >
                   Clear
@@ -120,8 +123,8 @@ const AnonymousPage = ({ user }) => {
           </section>
         </div>
       </main>
-      <main></main>
     </>
   );
 };
+
 export default AnonymousPage;
