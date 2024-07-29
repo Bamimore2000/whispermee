@@ -50,6 +50,7 @@ const Home = () => {
 
   return (
     <main className="w-[98%] max-w-[1300px] mx-auto h-[100vh]">
+      {/* nev for the pc 768px */}
       <nav className="hidden md:flex justify-between items-center md:h-[100px]">
         <div className="logo md:flex-1 text-[30px]">WhisperMe</div>
         <div className="about-home hidden md:flex md:flex-1 md:gap-2 text-[20px] items-center ">
@@ -64,6 +65,7 @@ const Home = () => {
           </Link>
         </div>
       </nav>
+
       <section className="article main-bg bg-fuchsia-100 rounded-lg">
         <nav className="flex md:hidden justify-between items-center">
           <div className="logo text-[25px]">WhisperMe</div>
@@ -114,7 +116,8 @@ const Home = () => {
             )}
           </AnimatePresence>
         </nav>
-        {/* <main className="h-full w-full grid place-items-center">
+
+        <main className="h-full w-full grid place-items-center">
           <article className="md:w-[50%] mx-auto ">
             <h1 className="italic bold text-[40px] md:text-[50px] tracking-wide mb-2">
               WhisperMe
@@ -130,7 +133,7 @@ const Home = () => {
               </Link>
             </button>
           </article>
-        </main> */}
+        </main>
       </section>
     </main>
   );
