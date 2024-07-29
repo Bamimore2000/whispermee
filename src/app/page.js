@@ -114,12 +114,12 @@ const Home = () => {
             )}
           </AnimatePresence>
         </nav>
-        <main className="h-full w-full grid place-items-center">
+        {/* <main className="h-full w-full grid place-items-center">
           <article className="md:w-[50%] mx-auto ">
             <h1 className="italic bold text-[40px] md:text-[50px] tracking-wide mb-2">
               WhisperMe
             </h1>
-            <p className="secondary text-lg md:text-xl mb-6">
+            <p className="secondary text-base md:text-xl mb-6">
               Ever truly wanted to know what people think about you? WhisperMe
               allows you to share and recieve anonymous messages
             </p>
@@ -130,7 +130,7 @@ const Home = () => {
               </Link>
             </button>
           </article>
-        </main>
+        </main> */}
       </section>
     </main>
   );
