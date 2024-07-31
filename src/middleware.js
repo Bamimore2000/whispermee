@@ -7,6 +7,7 @@ import {
   apiAuthPrefix,
   DEFAULT_LOGIN_REDIRECT,
   USERNAME_ROUTE,
+  ANONYMOUS_ROUTE,
 } from "./utils/routes";
 export const middleware = async (req) => {
   const { auth } = NextAuth(authConfig);
@@ -18,17 +19,20 @@ export const middleware = async (req) => {
   const isApiRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
   const isUserNameRoute = nextUrl.pathname.startsWith(USERNAME_ROUTE);
   const hasUsername = session?.user?.username;
+  const anonymousRoute = nextUrl.pathname.startsWith(ANONYMOUS_ROUTE);
   console.log(hasUsername);
+  console.log("route:", nextUrl.pathname, isPublicRoute);
   if (isApiRoute) {
     return null;
   }
+
   if (isAuthRoute) {
     if (isLoggedIn) {
       return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
     }
     return null;
   }
-  if (!isLoggedIn && !isPublicRoute) {
+  if (!isLoggedIn && !isPublicRoute && !anonymousRoute) {
     return NextResponse.redirect(new URL("/auth/login", req.url));
   }
   if (isUserNameRoute && hasUsername) {
@@ -43,6 +47,6 @@ export const config = {
   matcher: [
     // Exclude static assets, including those in the public folder,
     // but include specific image paths
-    "/((?!api|_next/static|_next/image|favicon.ico|anonymous.webp|mobile-mask.webp|desktop-bg.webp|mobile-bg.webp|username.webp|username-mobile-2.webp|landing-mobile.jpg|landing-pc.jpg|bottom-design.png).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|anonymous.webp|mobile-mask.webp|desktop-bg.webp|mobile-bg.webp|username.webp|username-mobile-2.webp|landing-mobile.webp|landing-pc.webp|bottom-design.webp|dayo.webp|sogo.webp).*)",
   ],
 };

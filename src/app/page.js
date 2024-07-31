@@ -4,53 +4,12 @@ import { FaGreaterThan } from "react-icons/fa";
 import { BsDot } from "react-icons/bs";
 import { useState } from "react";
 import { PiGreaterThanLight } from "react-icons/pi";
+import NavBarPublic from "./components/NavBarPublic";
 
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 const Home = () => {
-  const [open, setOpen] = useState(false);
-  const barStyle = {
-    width: "25px",
-    height: "2px",
-    backgroundColor: "#333",
-    margin: "9px 0",
-    transition: "0.4s",
-    transformOrigin: "center",
-  };
-
-  const transformBars = {
-    transform: open ? "rotate(45deg)" : "none",
-    marginTop: open ? "0" : "9px",
-  };
-
-  const transformBarsReverse = {
-    transform: open ? "rotate(-45deg)" : "none",
-    marginTop: open ? "-9px" : "9px",
-  };
-  const initialStyle = {
-    width: "50px",
-    height: "50px",
-    borderRadius: "50%",
-    backgroundColor: "blue",
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    transition: "width 0.5s ease, height 0.5s ease, border-radius 0.5s ease",
-    zIndex: "999",
-    cursor: "pointer",
-  };
-
-  const expandedStyle = {
-    width: "100vw",
-    height: "100vh",
-    borderRadius: "0%",
-    top: "0",
-    left: "0",
-    transform: "none",
-  };
-
   return (
     <main className="">
       <div className="bottom w-full h-[40px] md:h-[80px] absolute bottom-0">
@@ -58,11 +17,11 @@ const Home = () => {
           layout="fill"
           objectFit="cover"
           alt="yes"
-          src="/bottom-design.png"
+          src="/bottom-design.webp"
         ></Image>
       </div>
       {/* nev for the pc 768px */}
-      <nav className="hidden w-[85%] max-w-[1300px] mx-auto py-8 md:flex md:justify-between items-center md:h-[100px]">
+      {/* <nav className="hidden w-[85%] max-w-[1300px] mx-auto py-8 md:flex md:justify-between items-center md:h-[100px]">
         <div className="logo md:flex-1 text-[30px]">WhisperMe</div>
         <div className="about-home hidden md:flex md:flex-1 md:gap-2 text-[20px] items-center ">
           <Link href="/" className="about">
@@ -124,21 +83,22 @@ const Home = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </nav> */}
+      <NavBarPublic />
 
       <section className="article main-bg md:w-[85%] md:items-center md:gap-6 md:max-w-[1300px] md:mx-auto rounded-lg md:flex md:flex-row-reverse">
         <article className="w-[100vw] relative vsm:h-[170px] sm:h-[200px] md:h-[500px]">
           <Image
             layout="fill"
             objectFit="cover"
-            src="/landing-pc.jpg"
+            src="/landing-pc.webp"
             className=""
           ></Image>
           <Image
             className="md:hidden"
             layout="fill"
             objectFit="cover"
-            src="/landing-mobile.jpg"
+            src="/landing-mobile.webp"
           ></Image>
         </article>
         <main className="h-full w-[85%] max-w-[1300px] mt-[60px] mx-auto">

@@ -1,5 +1,7 @@
 "use client";
 import { FaTimes } from "react-icons/fa";
+import { LiaTimesSolid } from "react-icons/lia";
+
 // import { motion } from "framer-motion";
 import {
   easeInOut,
@@ -21,7 +23,7 @@ const MessageSheet = ({ open, setOpen, children, height }) => {
       opacity: [1, 0],
     });
     animate("#drawer", {
-      y: [yStart, 500],
+      y: [yStart, height || 500],
     });
     setOpen(false);
   };
@@ -70,7 +72,7 @@ const MessageSheet = ({ open, setOpen, children, height }) => {
                 }}
                 className="header w-full h-12 cursor-grab absolute top-0 left-0 rounded-t-xl bg-white touch-none active:cursor-grabbing"
               >
-                <FaTimes
+                <LiaTimesSolid
                   onClick={() => handleClose()}
                   className="absolute right-3 top-3"
                   size={25}
@@ -83,7 +85,7 @@ const MessageSheet = ({ open, setOpen, children, height }) => {
               className="hidden md:block md:w-full md:max-w-[768px] bg-[#F8F8F8] min-h-[50vh]"
             >
               <div className="cancel w-full relative h-[50px] bg-[#F8F8F8] p-4 flex justify-end">
-                <FaTimes
+                <LiaTimesSolid
                   onClick={() => handleClose()}
                   className="absolute right-3 top-3 cursor-pointer"
                   size={25}
