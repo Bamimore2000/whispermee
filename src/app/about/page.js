@@ -19,9 +19,9 @@ const About = () => {
             <div className="founders">
               <h2 className="text-2xl my-6">Meet the Founders</h2>
               <div className="wrapper-founder md:flex md:gap-16">
-                {founders.map((founder) => (
-                  <FounderCard key={founder.name} {...founder} /> // Ensure `founder.id` is unique
-                ))}
+                {founders.map((founder, index) => {
+                  return <FounderCard key={founder.name} {...founder} />;
+                })}
               </div>
             </div>
           </div>
