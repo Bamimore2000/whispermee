@@ -150,7 +150,7 @@ const Home = () => {
               Ever truly wanted to know what people think about you? WhisperMe
               allows you to share and recieve anonymous messages
             </p>
-            <button className="text-white text-xs bg-[#262626] shadow-lg mt-6 p-2 mb-2">
+            <button className="text-white text-xs bg-[#262626] shadow-lg mt-6 p-4 mb-2">
               <Link className="flex items-center  gap-2" href="/auth/login">
                 Recieve anonymous messages
                 <PiGreaterThanLight />
