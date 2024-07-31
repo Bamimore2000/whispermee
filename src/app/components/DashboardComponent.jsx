@@ -38,7 +38,7 @@ const DashboardComponent = ({ name, username }) => {
         <div className="mt-12">
           <article>Steps</article>
           <div className="w-full h-[350px] bg-[#F5F5F5] mt-4 p-8 relative flex flex-col justify-between">
-            <p className="text-[10px]">
+            <p className="text-[13px]">
               whisperme.vercel.app/anonymous/{username}
             </p>
             <span
