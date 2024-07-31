@@ -53,7 +53,7 @@ const Home = () => {
 
   return (
     <main className="">
-      <div className="bottom w-full md:h-[40px] h-[80px] absolute bottom-0">
+      <div className="bottom w-full h-[40px] md:h-[80px] absolute bottom-0">
         <Image
           layout="fill"
           objectFit="cover"
@@ -62,7 +62,7 @@ const Home = () => {
         ></Image>
       </div>
       {/* nev for the pc 768px */}
-      <nav className="hidden w-[85%] max-w-[1300px] mx-auto py-8 md:flex justify-between items-center md:h-[100px]">
+      <nav className="hidden w-[85%] max-w-[1300px] mx-auto py-8 md:flex md:justify-between items-center md:h-[100px]">
         <div className="logo md:flex-1 text-[30px]">WhisperMe</div>
         <div className="about-home hidden md:flex md:flex-1 md:gap-2 text-[20px] items-center ">
           <Link href="/" className="about">
@@ -76,7 +76,7 @@ const Home = () => {
           </Link>
         </div>
       </nav>
-      <nav className="flex w-[85%] max-w-[1300px] mx-auto py-8 md:hidden justify-between items-center">
+      <nav className="flex w-[85%] max-w-[1300px] mx-auto py-4 md:hidden justify-between items-center">
         <div className="logo text-[25px]">WhisperMe</div>
         <div
           onClick={() => setOpen((prev) => !prev)}
@@ -127,7 +127,7 @@ const Home = () => {
       </nav>
 
       <section className="article main-bg md:w-[85%] md:items-center md:gap-6 md:max-w-[1300px] md:mx-auto rounded-lg md:flex md:flex-row-reverse">
-        <article className="w-[100vw] relative h-[200px] md:h-[500px]">
+        <article className="w-[100vw] relative vsm:h-[170px] sm:h-[200px] md:h-[500px]">
           <Image
             layout="fill"
             objectFit="cover"
