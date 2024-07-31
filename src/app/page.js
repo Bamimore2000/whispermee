@@ -53,7 +53,7 @@ const Home = () => {
 
   return (
     <main className="">
-      <div className="bottom w-full h-[80px] absolute bottom-0">
+      <div className="bottom w-full md:h-[40px] h-[80px] absolute bottom-0">
         <Image
           layout="fill"
           objectFit="cover"
