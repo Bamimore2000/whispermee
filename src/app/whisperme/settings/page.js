@@ -37,8 +37,8 @@ const Settings = () => {
               className=""
             >
               <div className="mt-3">
-                <p className="underline cursor-pointer">Edit profile</p>
-                <p className="underline cursor-pointer">Change email</p>
+                <p className="underline cursor-pointer my-2">Edit profile</p>
+                <p className="underline cursor-pointer my-2">Change email</p>
               </div>
             </div>
           </section>

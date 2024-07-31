@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaGreaterThan } from "react-icons/fa";
 import { BsDot } from "react-icons/bs";
@@ -10,6 +10,13 @@ import { LiaTimesSolid } from "react-icons/lia";
 
 const NavBarPublic = () => {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [open]);
   const barStyle = {
     width: "25px",
     height: "2px",
@@ -101,7 +108,7 @@ const NavBarPublic = () => {
                 borderRadius: "100%",
                 opacity: 0,
               }}
-              className="hamburger-display grid place-items-center gap-0 bg-white md:hidden z-10 absolute"
+              className="hamburger-display grid place-items-center gap-0 bg-white md:hidden z-10 fixed"
             >
               <div>
                 <Link
