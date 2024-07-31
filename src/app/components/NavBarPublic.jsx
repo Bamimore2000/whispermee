@@ -6,6 +6,7 @@ import { FaGreaterThan } from "react-icons/fa";
 import { BsDot } from "react-icons/bs";
 import { PiGreaterThanLight } from "react-icons/pi";
 import { AnimatePresence, motion } from "framer-motion";
+import { LiaTimesSolid } from "react-icons/lia";
 
 const NavBarPublic = () => {
   const [open, setOpen] = useState(false);
@@ -103,10 +104,22 @@ const NavBarPublic = () => {
               className="hamburger-display grid place-items-center gap-0 bg-white md:hidden z-10 absolute"
             >
               <div>
-                <Link href="/" className="home block text-2xl">
+                <Link
+                  onClick={() => {
+                    setOpen(false);
+                  }}
+                  href="/"
+                  className="home block text-2xl"
+                >
                   Home
                 </Link>
-                <Link href="/about" className="about block text-2xl">
+                <Link
+                  onClick={() => {
+                    setOpen(false);
+                  }}
+                  href="/about"
+                  className="about block text-2xl"
+                >
                   About
                 </Link>
               </div>
