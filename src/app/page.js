@@ -7,7 +7,7 @@ import { PiGreaterThanLight } from "react-icons/pi";
 import NavBarPublic from "./components/NavBarPublic";
 
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const Home = () => {
   return (

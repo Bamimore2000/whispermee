@@ -1,7 +1,7 @@
 "use client";
 import { founders } from "../../utils/founder-info";
 import { useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import Message from "../components/Message";
 import { GoArrowUpRight } from "react-icons/go";
@@ -28,11 +28,13 @@ const FounderCard = ({ image, name, socials }) => {
         <div className="w-[90%] mx-auto mt-12 md:pb-4 ">
           <div className="wrapper ">
             <h1 className="text-2xl">Connect</h1>
-            {socials.map((social) => {
+            {socials.map((social, index) => {
               const { name, icon, link } = social;
-
               return (
-                <article className="flex items-center gap-6 mt-8 text-xl">
+                <article
+                  key={index}
+                  className="flex items-center gap-6 mt-8 text-xl"
+                >
                   <span className="social-icon">{icon}</span>
                   <Link
                     onClick={() => {

@@ -19,8 +19,8 @@ const About = () => {
             <div className="founders">
               <h2 className="text-2xl my-6">Meet the Founders</h2>
               <div className="wrapper-founder md:flex md:gap-16">
-                {founders.map((founder) => {
-                  return <FounderCard {...founder} />;
+                {founders.map((founder, index) => {
+                  return <FounderCard key={index} {...founder} />;
                 })}
               </div>
             </div>
