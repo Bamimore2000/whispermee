@@ -43,6 +43,6 @@ export const config = {
   matcher: [
     // Exclude static assets, including those in the public folder,
     // but include specific image paths
-    "/((?!api|_next/static|_next/image|favicon.ico|anonymous.webp|mobile-mask.webp|desktop-bg.webp|mobile-bg.webp|username.webp|username-mobile-2.webp).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|anonymous.webp|mobile-mask.webp|desktop-bg.webp|mobile-bg.webp|username.webp|username-mobile-2.webp|landing-mobile.jpg|landing-pc.jpg|bottom-design.png).*)",
   ],
 };

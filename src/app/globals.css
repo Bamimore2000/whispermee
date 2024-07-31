@@ -6,11 +6,11 @@
   color: #525252;
 }
 
-.article {
-  height: calc(100vh - 20px);
+/* .article {
+  height: calc(100vh - 112px);
   margin: 10px;
   padding: 20px;
-}
+} */
 .sign-in {
   height: calc(100vh - 20px);
   margin-top: 10px;
@@ -30,15 +30,15 @@
 }
 
 .main-bg {
-  background-image: url(/desktop-bg.webp);
+  /* background-image: url(/desktop-bg.webp);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 @media screen and (max-width: 767px) {
   .main-bg {
-    background-image: url(/mobile-bg.webp);
-    background-size: cover;
+    /* background-image: url(/mobile-bg.webp);
+    background-size: cover; */
   }
 }
 
