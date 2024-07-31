@@ -20,7 +20,7 @@ const About = () => {
               <h2 className="text-2xl my-6">Meet the Founders</h2>
               <div className="wrapper-founder md:flex md:gap-16">
                 {founders.map((founder, index) => {
-                  return <FounderCard key={index} {...founder} />;
+                  return <FounderCard key={index} {...founder} />
                 })}
               </div>
             </div>
