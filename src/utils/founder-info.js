@@ -35,7 +35,7 @@ export const founders = [
     name: "Bamimore Sogo",
     socials: [
       {
-        link: "https://wa.me/234902553053",
+        link: "https://wa.me/2349021553053",
         icon: <FaWhatsapp />,
         name: "Whatsapp",
       },

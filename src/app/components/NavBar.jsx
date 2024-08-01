@@ -11,6 +11,13 @@ const NavBar = () => {
   const pathname = usePathname();
 
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [open]);
   const barStyle = {
     width: "25px",
     height: "2px",
