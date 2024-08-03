@@ -42,7 +42,7 @@ const AnonymousPage = ({ user }) => {
 
   return (
     <>
-      <MessageSheet height="65vh" open={open} setOpen={setOpen}>
+      <MessageSheet height="40vh" open={open} setOpen={setOpen}>
         <div className="p-4 w-full mt-[50px]">
           {!error ? (
             <div>

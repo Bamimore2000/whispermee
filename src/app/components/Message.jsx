@@ -60,7 +60,7 @@ const MessageSheet = ({ open, setOpen, children, height }) => {
                 top: 0,
                 bottom: 0,
               }}
-              style={{ y, height: height || "60vh" }}
+              style={{ y, minHeight: height || "50vh" }}
               dragElastic={{
                 top: 0,
                 bottom: 0.5,
@@ -72,7 +72,7 @@ const MessageSheet = ({ open, setOpen, children, height }) => {
               }}
               drag="y"
               dragControls={controls}
-              className="message-wrapper w-[100vw] bg-white absolute left-0 bottom-0 rounded-t-xl md:hidden"
+              className="message-wrapper w-[100vw] bg-white absolute left-0 bottom-0 rounded-t-xl md:hidden pb-14"
             >
               <motion.div
                 onPointerDown={(e) => {

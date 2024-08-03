@@ -1,7 +1,7 @@
 import NavBarPublic from "../components/NavBarPublic";
 import { founders } from "../../utils/founder-info";
 import FounderCard from "../components/FounderCard";
-
+import Image from "next/legacy/image";
 const About = () => {
   return (
     <main>
@@ -26,6 +26,14 @@ const About = () => {
             </div>
           </div>
         </section>
+      </div>
+      <div className=" w-full relative h-[40px] md:h-[80px] mt-8">
+        <Image
+          layout="fill"
+          objectFit="cover"
+          alt="yes"
+          src="/bottom-design.webp"
+        ></Image>
       </div>
     </main>
   );

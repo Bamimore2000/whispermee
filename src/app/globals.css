@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  height: -webkit-fill-available;
+}
 .secondary {
   color: #525252;
 }
