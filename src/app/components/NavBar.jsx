@@ -47,12 +47,14 @@ const NavBar = () => {
   };
   return (
     <>
-    <Message height="60vh" open={openSheet} setOpen={setOpenSheet}>
+    <Message height="55vh" open={openSheet} setOpen={setOpenSheet}>
     <div className="wrapper mt-12 text-center mx-auto w-[90%]">
       <PiWarningCircle className="mx-auto mb-4" size={100}/>
       <h3 className="mb-6">Are you sure you want to sign out</h3>
       <div className="buttons flex justify-center gap-2">
-<button className="p-2  w-full border bg-black text-white border-black">No</button>
+<button onClick={()=>{
+  setOpenSheet(false)
+}} className="p-2  w-full border bg-black text-white border-black">No</button>
       <button onClick={()=>{
         signOut()
       }} className="p-2 border border-black  w-full">Yes</button>
