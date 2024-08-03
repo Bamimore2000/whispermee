@@ -45,7 +45,7 @@ const NavBar = () => {
   };
   return (
     <>
-      <Message height="55vh" open={openSheet} setOpen={setOpenSheet}>
+      <Message height="30dvh" open={openSheet} setOpen={setOpenSheet}>
         <div className="wrapper mt-12 text-center mx-auto w-[90%]">
           <PiWarningCircle className="mx-auto mb-4" size={100} />
           <h3 className="mb-6">Are you sure you want to sign out</h3>
