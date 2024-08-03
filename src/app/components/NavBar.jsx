@@ -4,7 +4,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { links } from "../../utils/links";
 import { usePathname } from "next/navigation";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 const NavBar = () => {
   const { data: session } = useSession();
 
@@ -132,7 +132,8 @@ const NavBar = () => {
         </div>
         <div className="pc-header min-h-20 w-[90%] mx-auto hidden md:block pt-4">
           <h1 className="mb-4 header-title text-2xl">WhisperMe</h1>
-          <div className="items flex gap-3">
+          <div className="map">
+            <div className="items flex gap-3">
             {links.map((links, index) => {
               const { name, link } = links;
               const isHome = pathname === link;
@@ -152,24 +153,14 @@ const NavBar = () => {
                 </Link>
               );
             })}
-            {/* the items to be mapped */}
-            {/* <Link
-            style={{ borderBottom: "2px black solid" }}
-            className="p-4"
-            href="#"
-          >
-            <span className="p-2 bg-red-50">Overview</span>
-          </Link>
-          <Link className="p-4" href="#">
-            <span className="p-2 bg-red-50">Messages</span>
-          </Link>
-          <Link className="p-4" href="#">
-            <span className="p-2 bg-red-50">Analytics</span>
-          </Link>
-          <Link className="p-4" href="#">
-            <span className="p-2 bg-red-50">Settings</span>
-          </Link> */}
+            
           </div>
+          <button className="p-6 bg-black text-white"  type="button" onClick={()=>{
+            signOut()
+          }}>Sign out</button>
+
+          </div>
+          
         </div>
       </nav>
     </>

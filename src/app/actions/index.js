@@ -1,5 +1,5 @@
 "use server";
-import { signIn } from "../../auth";
+import { signIn, signOut } from "../../auth";
 import { getUserFromDb } from "../../utils/db";
 import { getUserFromDbByUsername } from "../../utils/db";
 import User from "../../(models)/UserModel";
@@ -11,6 +11,11 @@ export const socialSignIn = async (formData) => {
     redirectTo: "/auth/username",
   });
 };
+
+// signout
+export const socialSignOut = async ()=>{
+  await signOut()
+}
 
 // gets the user from the database
 export const getUser = async (username) => {
