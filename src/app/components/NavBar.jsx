@@ -47,7 +47,7 @@ const NavBar = () => {
   };
   return (
     <>
-    <Message height="40vh" open={openSheet} setOpen={setOpenSheet}>
+    <Message height="60vh" open={openSheet} setOpen={setOpenSheet}>
     <div className="wrapper mt-12 text-center mx-auto w-[90%]">
       <PiWarningCircle className="mx-auto mb-4" size={100}/>
       <h3 className="mb-6">Are you sure you want to sign out</h3>
@@ -127,7 +127,7 @@ const NavBar = () => {
               </div>
               <button onClick={()=> {
                 setOpenSheet(true)
-              }} className="w-full p-2 border flex justify-center gap-3 items-center border-black  mt-[53vh]">Logout <CiLogout /></button>
+              }} className="w-full p-2 border flex justify-center gap-3 items-center border-black  mt-[60vh]">Logout <CiLogout /></button>
             </div>
           </motion.div>
         )}
