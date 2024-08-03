@@ -24,7 +24,7 @@ const FounderCard = ({ image, name, socials }) => {
           <span className="underline">Connect</span>
         </button>
       </article>
-      <Message open={open} setOpen={setOpen} height="40vh">
+      <Message open={open} setOpen={setOpen} height="40dvh">
         <div className="w-[90%] mx-auto mt-12 md:pb-4 ">
           <div className="wrapper ">
             <h1 className="text-2xl">Connect</h1>
