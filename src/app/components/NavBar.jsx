@@ -127,7 +127,7 @@ const NavBar = () => {
               </div>
               <button onClick={()=> {
                 setOpenSheet(true)
-              }} className="w-full p-2 border flex justify-center gap-3 items-center border-black  mt-[60vh]">Logout <CiLogout /></button>
+              }} className="w-full p-2 border flex justify-center gap-3 items-center border-black  mt-[40vh]">Logout <CiLogout /></button>
             </div>
           </motion.div>
         )}
