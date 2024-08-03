@@ -5,12 +5,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { links } from "../../utils/links";
 import { usePathname } from "next/navigation";
 import { signIn, signOut, useSession } from "next-auth/react";
-import Message from "../components/Message"
+import Message from "../components/Message";
 import { CiLogout } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
 import { PiWarningCircle } from "react-icons/pi";
-
-
 
 const NavBar = () => {
   const { data: session } = useSession();
@@ -18,7 +16,7 @@ const NavBar = () => {
   const pathname = usePathname();
 
   const [open, setOpen] = useState(false);
-  const [openSheet, setOpenSheet] = useState(false)
+  const [openSheet, setOpenSheet] = useState(false);
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -47,21 +45,30 @@ const NavBar = () => {
   };
   return (
     <>
-    <Message height="55vh" open={openSheet} setOpen={setOpenSheet}>
-    <div className="wrapper mt-12 text-center mx-auto w-[90%]">
-      <PiWarningCircle className="mx-auto mb-4" size={100}/>
-      <h3 className="mb-6">Are you sure you want to sign out</h3>
-      <div className="buttons flex justify-center gap-2">
-<button onClick={()=>{
-  setOpenSheet(false)
-}} className="p-2  w-full border bg-black text-white border-black">No</button>
-      <button onClick={()=>{
-        signOut()
-      }} className="p-2 border border-black  w-full">Yes</button>
-      </div>
-      
-    </div>
-    </Message>
+      <Message height="55vh" open={openSheet} setOpen={setOpenSheet}>
+        <div className="wrapper mt-12 text-center mx-auto w-[90%]">
+          <PiWarningCircle className="mx-auto mb-4" size={100} />
+          <h3 className="mb-6">Are you sure you want to sign out</h3>
+          <div className="buttons flex justify-center gap-2">
+            <button
+              onClick={() => {
+                setOpenSheet(false);
+              }}
+              className="p-2  w-full border bg-black text-white border-black"
+            >
+              No
+            </button>
+            <button
+              onClick={() => {
+                signOut();
+              }}
+              className="p-2 border border-black  w-full"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </Message>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -127,9 +134,14 @@ const NavBar = () => {
                   );
                 })}
               </div>
-              <button onClick={()=> {
-                setOpenSheet(true)
-              }} className="w-full p-2 border flex justify-center gap-3 items-center border-black  mt-[40vh]">Logout <CiLogout /></button>
+              <button
+                onClick={() => {
+                  setOpenSheet(true);
+                }}
+                className="w-full p-2 border flex justify-center gap-3 items-center border-black  mt-[40vh]"
+              >
+                Logout <CiLogout />
+              </button>
             </div>
           </motion.div>
         )}
@@ -151,33 +163,36 @@ const NavBar = () => {
           <h1 className="mb-4 header-title text-2xl">WhisperMe</h1>
           <div className="map flex justify-between">
             <div className="items flex gap-3">
-            {links.map((links, index) => {
-              const { name, link } = links;
-              const isHome = pathname === link;
-              return (
-                <Link
-                  key={index}
-                  style={{ borderBottom: isHome ? "2px black solid" : "" }}
-                  className="p-4"
-                  href={link}
-                >
-                  <span
-                    style={{ backgroundColor: isHome ? "white" : "" }}
-                    className="p-2"
+              {links.map((links, index) => {
+                const { name, link } = links;
+                const isHome = pathname === link;
+                return (
+                  <Link
+                    key={index}
+                    style={{ borderBottom: isHome ? "2px black solid" : "" }}
+                    className="p-4"
+                    href={link}
                   >
-                    {name}
-                  </span>
-                </Link>
-              );
-            })}
-            
+                    <span
+                      style={{ backgroundColor: isHome ? "white" : "" }}
+                      className="p-2"
+                    >
+                      {name}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+            <button
+              className="p-2 bg-white text-black"
+              type="button"
+              onClick={() => {
+                signOut();
+              }}
+            >
+              Sign out{" "}
+            </button>
           </div>
-          <button className="p-2 bg-white text-black"  type="button" onClick={()=>{
-            signOut()
-          }}>Sign out </button>
-
-          </div>
-          
         </div>
       </nav>
     </>

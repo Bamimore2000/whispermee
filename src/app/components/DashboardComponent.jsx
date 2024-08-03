@@ -41,12 +41,12 @@ const DashboardComponent = ({ name, username }) => {
             <p className="text-[13px]">
               whisperme.vercel.app/anonymous/{username}
             </p>
-            <span
+            {/* <span
               onClick={() => setOpen(true)}
               className="absolute cursor-pointer right-0 top-0 text-center bg-[#E4EFFF] p-2 rounded-2xl w-16"
             >
               Edit
-            </span>
+            </span> */}
             <button
               onClick={() => copyText(username)}
               className="w-[90%] bg-[#262626] mx-auto items-center justify-center gap-2 text-white underline flex p-3"

@@ -42,7 +42,7 @@ const AnonymousPage = ({ user }) => {
 
   return (
     <>
-      <MessageSheet open={open} setOpen={setOpen}>
+      <MessageSheet height="65vh" open={open} setOpen={setOpen}>
         <div className="p-4 w-full mt-[50px]">
           {!error ? (
             <div>
@@ -77,7 +77,7 @@ const AnonymousPage = ({ user }) => {
           )}
         </div>
       </MessageSheet>
-      <main className="sign-in h-[100vh]">
+      <main className="sign-in min-h-[100vh]">
         {/* <NavBarPublic/> */}
         <div className="main-wrapper mt-[15px] md:mt-0 flex flex-col md:p-5 md:w-[98%] md:flex-row items-center gap-6 h-full">
           <section className="first basis-2/6 md:basis-2/5 h-[100%] w-full flex items-end">
