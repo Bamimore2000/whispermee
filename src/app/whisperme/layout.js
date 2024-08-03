@@ -14,11 +14,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={myFont.className}>
-        <NavBar></NavBar>
+    <>
+    <NavBar></NavBar>
         <div className="mt-[100px] min-h-[100%] md:mt-[130px]">{children}</div>
-      </body>
-    </html>
+    </>
+        
+    
   );
 }

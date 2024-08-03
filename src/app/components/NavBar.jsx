@@ -4,13 +4,21 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { links } from "../../utils/links";
 import { usePathname } from "next/navigation";
-import { signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
+import Message from "../components/Message"
+import { CiLogout } from "react-icons/ci";
+import { IoIosLogOut } from "react-icons/io";
+import { PiWarningCircle } from "react-icons/pi";
+
+
+
 const NavBar = () => {
   const { data: session } = useSession();
 
   const pathname = usePathname();
 
   const [open, setOpen] = useState(false);
+  const [openSheet, setOpenSheet] = useState(false)
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -18,6 +26,7 @@ const NavBar = () => {
       document.body.style.overflow = "visible";
     }
   }, [open]);
+
   const barStyle = {
     width: "25px",
     height: "2px",
@@ -38,6 +47,19 @@ const NavBar = () => {
   };
   return (
     <>
+    <Message height="40vh" open={openSheet} setOpen={setOpenSheet}>
+    <div className="wrapper mt-12 text-center mx-auto w-[90%]">
+      <PiWarningCircle className="mx-auto mb-4" size={100}/>
+      <h3 className="mb-6">Are you sure you want to sign out</h3>
+      <div className="buttons flex justify-center gap-2">
+<button className="p-2  w-full border bg-black text-white border-black">No</button>
+      <button onClick={()=>{
+        signOut()
+      }} className="p-2 border border-black  w-full">Yes</button>
+      </div>
+      
+    </div>
+    </Message>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -102,17 +124,10 @@ const NavBar = () => {
                     </Link>
                   );
                 })}
-
-                {/* <Link className="block text-lg" href="#">
-                  Messages
-                </Link>
-                <Link className="block text-lg" href="#">
-                  Analytics
-                </Link>
-                <Link className="block text-lg" href="#">
-                  Settings
-                </Link> */}
               </div>
+              <button onClick={()=> {
+                setOpenSheet(true)
+              }} className="w-full p-2 border flex justify-center gap-3 items-center border-black  mt-[53vh]">Logout <CiLogout /></button>
             </div>
           </motion.div>
         )}
@@ -132,7 +147,7 @@ const NavBar = () => {
         </div>
         <div className="pc-header min-h-20 w-[90%] mx-auto hidden md:block pt-4">
           <h1 className="mb-4 header-title text-2xl">WhisperMe</h1>
-          <div className="map">
+          <div className="map flex justify-between">
             <div className="items flex gap-3">
             {links.map((links, index) => {
               const { name, link } = links;
@@ -155,9 +170,9 @@ const NavBar = () => {
             })}
             
           </div>
-          <button className="p-6 bg-black text-white"  type="button" onClick={()=>{
+          <button className="p-2 bg-white text-black"  type="button" onClick={()=>{
             signOut()
-          }}>Sign out</button>
+          }}>Sign out </button>
 
           </div>
           

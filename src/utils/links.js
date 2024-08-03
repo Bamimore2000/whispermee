@@ -15,8 +15,4 @@ export const links = [
     name: "Settings",
     link: "/whisperme/settings",
   },
-  {
-    name: "Logout",
-    link: "/api/auth/signout",
-  },
 ];

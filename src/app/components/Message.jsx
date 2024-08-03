@@ -1,6 +1,7 @@
 "use client";
 import { FaTimes } from "react-icons/fa";
 import { LiaTimesSolid } from "react-icons/lia";
+import { useEffect } from "react";
 
 // import { motion } from "framer-motion";
 import {
@@ -12,6 +13,13 @@ import {
 } from "framer-motion";
 
 const MessageSheet = ({ open, setOpen, children, height }) => {
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [open]);
   const [scope, animate] = useAnimate();
   const controls = useDragControls();
   const y = useMotionValue(0);
