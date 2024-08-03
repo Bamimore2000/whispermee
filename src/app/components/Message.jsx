@@ -45,7 +45,7 @@ const MessageSheet = ({ open, setOpen, children, height }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             onClick={handleClose}
-            className="parent h-[100vh] relative w-[100vw] bg-slate-400/50 md:grid md:place-items-center"
+            className="parent h-[100dvh] relative w-[100vw] bg-slate-400/50 md:grid md:place-items-center"
           >
             <motion.div
               id="drawer"
@@ -60,7 +60,7 @@ const MessageSheet = ({ open, setOpen, children, height }) => {
                 top: 0,
                 bottom: 0,
               }}
-              style={{ y, minHeight: height || "50vh" }}
+              style={{ y, minHeight: height || "50dvh" }}
               dragElastic={{
                 top: 0,
                 bottom: 0.5,
