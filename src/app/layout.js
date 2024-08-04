@@ -3,6 +3,7 @@ import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "../auth";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react";
 const myFont = localFont({
   src: "../fonts/jetbrainsmono-regular.woff2",
 });
@@ -17,7 +18,10 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={myFont.className}>
-        <SessionProvider session={session}>{children}</SessionProvider>
+        <SessionProvider session={session}>
+          {children}
+          <Analytics />
+        </SessionProvider>
       </body>
     </html>
   );
